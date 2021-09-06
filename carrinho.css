@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 5vw 95vw;
+    grid-template-rows: 100vh;
+    grid-template-areas: "navlat content";
+}
+
+/* navbar lateral */
+
+.nav-lateral ul li a {
+    padding: 15px;
+}
+
+/* container principal */
+
+.content {
+    grid-area: content;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 100vh;
+    grid-template-areas: "lista nota";
+}
+
+.content .itens-list {
+    grid-area: lista;
+    margin: 0;
+    padding: 50px;
+    overflow: auto;
+}
+
+.content .itens-list .title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 25px;
+    text-transform: uppercase;
+    transform: scaleY(2);
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+}
+
+.content .itens-list .card {
+    height: 150px;
+    width: 100%;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 100%;
+    grid-template-areas: "img body";
+    border: 2px solid #D83953;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.content .itens-list .card:not(.active) {
+    cursor: pointer;
+}
+
+.content .itens-list .card.card:hover:not(.active) {
+    margin-left: 20px;
+}
+
+.content .itens-list .active {
+    margin-left: 20px;
+}
+
+
+.content .itens-list .card .card-img {
+    grid-area: img;
+    border-right: 2px solid #D83953;
+}
+
+.content .itens-list .card .card-img img {
+   border-radius: 7.8px 0px 0px 7.8px;
+}
+
+.content .itens-list .card:not(.active) .card-body {
+    grid-area: body;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    background: #1b1b1b;
+    color: white;
+    padding: 0 20px;
+    position: relative;
+    border-radius: 0px 7.8px 7.8px 0px;
+    transition: all 0.3s ease;
+}
+
+.content .itens-list .card:hover:not(.active) .card-body {
+    grid-area: body;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    color: #1b1b1b;
+    background: #f9f9f9;
+    padding: 0 20px;
+    position: relative;
+    border-radius: 0px 7.8px 7.8px 0px;
+}
+
+.content .itens-list .active .card-body {
+    grid-area: body;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    color: #1b1b1b;
+    background: #f9f9f9;
+    padding: 0 20px;
+    position: relative;
+    border-radius: 0px 7.8px 7.8px 0px;
+}
+
+.content .itens-list .card .card-body .title {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.5px;
+    margin-top: -20px;
+    margin-bottom: 5px;
+}
+
+.content .itens-list .card .card-body .description {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.content .itens-list .card .card-body .btn-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 0px 0px 7.8px 0px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 1px;
+    background: #D83953;
+}
+
+.content .itens-list .card:not(.active) .card-body .btn-card {
+    cursor: pointer;
+}
+
+.content .itens-list .card .card-body .btn-card i {
+    font-size: 16px;
+}
+
+.content .nota-fiscal {
+    grid-area: nota;
+    background: #f9f9f9;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    box-shadow: -10px 0px 20px #dddddd;
+}
+
+.content .nota-fiscal .nota-card {
+    height: 125px;
+    width: 100%;
+    background: #1b1b1b;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 100%;
+    grid-template-areas: "img body";
+}
+
+.content .nota-fiscal .nota-card .card-img {
+    grid-area: img;
+    background-image: url('assets/carousel/carousel2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content .nota-fiscal .nota-card .card-body {
+    grid-area: body;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    padding: 0 20px;
+}
+
+.content .nota-fiscal .nota-card .card-body .title {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.content .nota-fiscal .nota-card .card-body .description {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.content .nota-fiscal .nota-body {
+    width: 80%;
+}
+
+.content .nota-fiscal .nota-body .nota-header {
+    border-bottom: 1px solid #999;
+    padding-bottom: 15px;
+    width: 100%;
+}
+
+.content .nota-fiscal .nota-body .nota-header .title {
+    letter-spacing: 0.5px;
+}
+
+.content .nota-fiscal .nota-body .nota-header .info {
+    display: block; 
+    width: 100%;
+}
+
+.content .nota-fiscal .nota-body .nota-header .info .date {
+    color: #888;
+    border-right: 1px solid #999;
+    font-size: 11px;
+    font-weight: 400;
+    padding-right: 10px;
+    letter-spacing: 0.5px;
+}
+
+.content .nota-fiscal .nota-body .nota-header .info .codigo {
+    color: #888;
+    font-size: 11px;
+    font-weight: 400;
+    padding-left: 10px;
+    letter-spacing: 0.5px;
+}
+
+.content .nota-fiscal .nota-body .nota-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px 0;
+    width: 100%;
+    border-bottom: 1px solid #999;
+}
+
+.content .nota-fiscal .nota-body .nota-cell .group-prod {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    width: 100%;
+    height: 40px;
+}
+
+.content .nota-fiscal .nota-body .nota-cell .group-prod .esq {
+    position: absolute;
+    left: 0;
+    color: #888;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.content .nota-fiscal .nota-body .nota-cell .group-prod .dir {
+    position: absolute;
+    right: 0;
+    color: #888;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
