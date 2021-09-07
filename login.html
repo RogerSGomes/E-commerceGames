@@ -21,7 +21,7 @@
                 <a href="#"><i class="material-icons">menu</i></a>
             </li>
             <li>
-                <a href="index.html"><i class="material-icons">home</i><span class="tooltip">Início</span></a>
+                <a href="index.php"><i class="material-icons">home</i><span class="tooltip">Início</span></a>
             </li>
             <li>
                 <a href="carrinho.html"><i class="material-icons">shopping_cart</i><span
@@ -48,15 +48,15 @@
     <div class="container">
         <div class="forms-container">
             <div class="signin-signup">
-                <form action="" class="sign-in-form">
+                <form action="validar_login.php" method="POST" class="sign-in-form">
                     <h2 class="title">Entrar</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Usuário">
+                        <input type="text" placeholder="Usuário" name="usuario">
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Senha">
+                        <input type="password" placeholder="Senha" name="senha">
                     </div>
                     <input type="submit" value="Entrar" class="btn solid">
                     <p class="social-text">Ou entre com uma mídia social</p>
@@ -76,19 +76,19 @@
                     </div>
                 </form>
 
-                <form action="" class="sign-up-form">
+                <form action="validar_cadastro.php" method="POST" class="sign-up-form">
                     <h2 class="title">Cadastrar</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Usuário">
+                        <input type="text" placeholder="Usuário" name="usuario">
                     </div>
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
-                        <input type="email" placeholder="E-mail">
+                        <input type="email" placeholder="E-mail" name="email">
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Senha">
+                        <input type="password" placeholder="Senha" name="senha">
                     </div>
                     <input type="submit" value="Cadastrar" class="btn solid">
                     <p class="social-text">Ou cadastre-se com uma mídia social</p>

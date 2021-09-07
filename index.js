@@ -110,12 +110,7 @@ $(document).ready(function () {
         if (cont <= 11) {
             limpar();
             cont++;
-            $(".imgblur" + cont).css({
-                "display": "block"
-            });
-            $(".content" + cont).css({
-                "display": "block"
-            });
+            $("#imgblur" + cont + ", #content" + cont).addClass("active");
             $(".container").css({
                 "background-image": "url(assets/carousel/carousel" + cont + ".jpg)"
             });
@@ -129,12 +124,7 @@ $(document).ready(function () {
         if (cont > 1) {
             limpar();
             cont--;
-            $(".imgblur" + cont).css({
-                "display": "block"
-            });
-            $(".content" + cont).css({
-                "display": "block"
-            });
+            $("#imgblur" + cont + ", #content" + cont).addClass("active");
             $(".container").css({
                 "background-image": "url(assets/carousel/carousel" + cont + ".jpg)"
             });
@@ -147,9 +137,7 @@ $(document).ready(function () {
 // limpa os displays das imagens do carousel
 
 function limpar() {
-    $(".imgblur1, .imgblur2, .imgblur3, .imgblur4, .imgblur5, .imgblur6, .imgblur7, .imgblur8, .imgblur9, .imgblur10, .imgblur11, .imgblur12, .content1, .content2, .content3, .content4, .content5, .content6, .content7, .content8, .content9, .content10, .content11, .content12").css({
-        "display": "none"
-    });
+    $(".imgblur, .content").removeClass("active");
 }
 
 // ao clicar sobre uma imagem (carousel)
@@ -242,9 +230,7 @@ function imgfunc(par) {
         }
     }
     limpar();
-    $(".imgblur" + cont + ", .content" + cont).css({
-        "display": "block"
-    });
+    $("#imgblur" + cont + ", #content" + cont).addClass("active");
     $(".container").css({
         "background-image": "url(assets/carousel/carousel" + cont + ".jpg)"
     });

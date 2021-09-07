@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 body {
+     background-color: #D83953;
     margin: 0;
     padding: 0;
     color: white;
@@ -24,7 +25,7 @@ body {
 
 /* container principal */
 
-.content {
+.body-content {
     grid-area: content;
     padding: 0;
     margin: 0;
@@ -32,7 +33,7 @@ body {
 
 /* borrão */
 
-.blur {
+.body-content .blur {
     display: flex;
     position: fixed;
     width: 95vw;
@@ -42,8 +43,7 @@ body {
     z-index: 2;
 }
 
-.imgblur1 {
-    display: block;
+.body-content .imgblur {
     position: absolute;
     width: 95vw;
     clip-path: polygon(0 0, 43% 0, 30.1% 100%, 0% 100%);
@@ -51,28 +51,13 @@ body {
     z-index: 0;
 }
 
-.imgblur2,
-.imgblur3,
-.imgblur4,
-.imgblur5,
-.imgblur6,
-.imgblur7,
-.imgblur8,
-.imgblur9,
-.imgblur10,
-.imgblur11,
-.imgblur12 {
+.body-content .imgblur:not(.active) {
     display: none;
-    position: absolute;
-    width: 95vw;
-    clip-path: polygon(0 0, 43% 0, 30.1% 100%, 0% 100%);
-    filter: blur(7px);
-    z-index: 0;
 }
 
 /* container descrições */
 
-.container {
+.body-content .container {
     height: 100%;
     width: 100%;
     display: grid;
@@ -85,25 +70,8 @@ body {
     background-repeat: no-repeat;
 }
 
-.content1 {
-    display: block;
-}
-
-.content2,
-.content3,
-.content4,
-.content5,
-.content6,
-.content7,
-.content8,
-.content9,
-.content10,
-.content11,
-.content12 {
+.body-content .container .container-prod {
     display: none;
-}
-
-container {
     padding: 0 50px;
     width: 100%;
     grid-area: con;
@@ -113,7 +81,11 @@ container {
     z-index: 2;
 }
 
-container .title {
+.body-content .container .container-prod .content:not(.active) {
+    display: none;
+}
+
+.body-content .container .container-prod .content .title {
     font-family: 'Nunito', sans-serif;
     font-size: 30px;
     color: #D83953;
@@ -122,18 +94,18 @@ container .title {
     letter-spacing: 2px;
 }
 
-container .subtitle {
+.body-content .container .container-prod .content .subtitle {
     font-size: 14px;
 }
 
-container .content-text {
+.body-content .container .container-prod .content .content-text {
     margin-top: 0px;
     font-size: 14px;
     width: 70%;
     text-align: left;
 }
 
-container .button {
+.body-content .container .container-prod .container-button .button {
     margin-top: 50px;
     display: flex;
     border: none;
@@ -151,25 +123,25 @@ container .button {
     letter-spacing: 0.5px;
 }
 
-container .button:hover {
+.body-content .container .container-prod .container-button .button:hover {
     box-shadow: 3px 3px 25px #D83953;
 }
 
-empty {
+.body-content .container .empty {
     grid-area: emp;
     z-index: 2;
 }
 
 /* carousel */
 
-centercarousel {
+.body-content .container .centercarousel {
     width: 95vw;
     grid-area: car;
     z-index: 2;
     display: flex;
 }
 
-carousel {
+.body-content .container .centercarousel .carousel {
     padding: 30px 30px;
     display: flex;
     align-items: center;
@@ -179,12 +151,12 @@ carousel {
     position: relative;
 }
 
-carousel:hover span {
+.body-content .container .centercarousel .carousel:hover span {
     color: #D83953;
     transition: 0.5s;
 }
 
-carousel span {
+.body-content .container .centercarousel .carousel span {
     position: absolute;
     font-size: 40px;
     font-weight: bold;
@@ -200,12 +172,12 @@ carousel span {
     justify-content: center;
 }
 
-carousel span:nth-of-type(2) {
+.body-content .container .centercarousel .carousel span:nth-of-type(2) {
     left: 95%;
     text-align: right;
 }
 
-carousel section {
+.body-content .container .centercarousel .carousel .section {
     width: 1436px;
     height: 100%;
     background: rgba(0, 0, 0, 0);
@@ -215,11 +187,11 @@ carousel section {
     overflow: hidden;
 }
 
-carousel section::-webkit-scrollbar {
+.body-content .container .centercarousel .carousel .section::-webkit-scrollbar {
     display: none;
 }
 
-carousel div {
+.body-content .container .centercarousel .carousel .section .carouseldiv {
     left: 0px;
     min-width: 28.2%;
     min-height: 100%;
@@ -234,14 +206,16 @@ carousel div {
     transition: 0.5s;
     clip-path: polygon(10% 0%, 100% 0, 90% 100%, 0% 100%);
     cursor: pointer;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-carousel div:not(.active) {
+.body-content .container .centercarousel .carousel .section .carouseldiv:not(.active) {
     transform: scale(0.75, 0.75);
     margin: auto -55px;
 }
 
-carousel div .group-elements {
+.body-content .container .centercarousel .carousel .section .carouseldiv .group-elements {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -251,7 +225,7 @@ carousel div .group-elements {
     right: 60px;
 }
 
-carousel div .group-elements group {
+.body-content .container .centercarousel .carousel .section .carouseldiv .group-elements .group-icn-nam {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -259,7 +233,7 @@ carousel div .group-elements group {
     width: 100%;
 }
 
-carousel div .group-elements group img {
+.body-content .container .centercarousel .carousel .section .carouseldiv .group-elements .group-icn-nam img {
     background-color: #f1f1f1;
     border-radius: 10px;
     padding: 5px 5px;
@@ -267,7 +241,7 @@ carousel div .group-elements group img {
     margin-right: 2px;
 }
 
-carousel div .group-elements group .tooltip {
+.body-content .container .centercarousel .carousel .section .carouseldiv .group-elements .group-icn-nam .tooltip {
     position: absolute;
     top: -30px;
     left: 50%;
@@ -286,80 +260,6 @@ carousel div .group-elements group .tooltip {
     display: none;
 }
 
-carousel div .group-elements group:hover .tooltip {
+.body-content .container .centercarousel .carousel .section .carouseldiv .group-elements .group-icn-nam:hover .tooltip {
     display: block;
-}
-
-/* imagens de fundo */
-
-#img1 {
-    background-image: url(assets/carousel/carousel1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-#img2 {
-    background-image: url(assets/carousel/carousel2.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-#img3 {
-    background-image: url(assets/carousel/carousel3.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-#img4 {
-    background-image: url(assets/carousel/carousel4.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-#img5 {
-    background-image: url(assets/carousel/carousel5.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-#img6 {
-    background-image: url(assets/carousel/carousel6.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-#img7 {
-    background-image: url(assets/carousel/carousel7.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-#img8 {
-    background-image: url(assets/carousel/carousel8.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-#img9 {
-    background-image: url(assets/carousel/carousel9.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-#img10 {
-    background-image: url(assets/carousel/carousel10.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-#img11 {
-    background-image: url(assets/carousel/carousel11.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-#img12 {
-    background-image: url(assets/carousel/carousel12.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
 }
