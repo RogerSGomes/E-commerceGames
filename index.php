@@ -25,6 +25,10 @@
                         class="tooltip">Início</span></a>
             </li>
             <li>
+                <a href="#"><i class="material-icons">store</i><span
+                        class="tooltip">Loja</span></a>
+            </li>
+            <li>
                 <a href="carrinho.html"><i class="material-icons">shopping_cart</i><span
                         class="tooltip">Carrinho</span></a>
             </li>
