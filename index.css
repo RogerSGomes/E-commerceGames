@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 body {
-     background-color: #D83953;
+    background-color: #1b1b1b;
     margin: 0;
     padding: 0;
     color: white;
@@ -29,13 +29,20 @@ body {
     grid-area: content;
     padding: 0;
     margin: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.body-content .jumbotron {
+    position: relative;
+    box-shadow: 0px 0px 50px black;
 }
 
 /* borrão */
 
 .body-content .blur {
     display: flex;
-    position: fixed;
+    position: absolute;
     width: 95vw;
     height: 100vh;
     clip-path: polygon(0 0, 43% 0, 30.1% 100%, 0% 100%);
@@ -65,7 +72,6 @@ body {
     grid-template-rows: 71% 29%;
     grid-template-areas:    "con emp"
                             "car car";
-    background-image: url(assets/carousel/carousel1.jpg);
     background-size: 100%100%;
     background-repeat: no-repeat;
 }
@@ -262,4 +268,144 @@ body {
 
 .body-content .container .centercarousel .carousel .section .carouseldiv .group-elements .group-icn-nam:hover .tooltip {
     display: block;
+}
+
+.body-content .loja {
+    height: 1000px;
+    color: white;
+    padding: 50px;
+}
+
+.body-content .loja p.title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 25px;
+    text-transform: uppercase;
+    transform: scaleY(2);
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+}
+
+.body-content .loja .card-group {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.body-content .loja .card-group .card {
+    margin: 20px 10px;
+    position: relative;
+    color: black;
+    background-color: white;
+    box-shadow:  0 0 50px #000000;
+    border-radius: 10px;
+    width: 300px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 42% 8%;
+    grid-template-areas:    "card-header"
+                            "card-body"
+                            "card-footer";
+}
+
+.body-content .loja .card-group .card .card-header {
+    grid-area: card-header;
+}
+
+.body-content .loja .card-group .card .card-header img {
+    border-radius: 8px 8px 0px 0px;
+}
+
+.body-content .loja .card-group .card .card-body {
+    grid-area: card-body;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.body-content .loja .card-group .card .card-body .title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 0;
+    color: white;
+    background-color: #1b1b1b;
+    width: 100%;
+    margin: 0;
+}
+
+.body-content .loja .card-group .card .card-body .preco {
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    margin-bottom: 0px;
+    transform: scaleY(1.5);
+    color: #D83953;
+}
+
+.body-content .loja .card-group .card .card-body .plataforma {
+    text-align: center;
+    color: #333;
+}
+
+.body-content .loja .card-group .card .card-body .group-img-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.body-content .loja .card-group .card .card-body .group-img-card img {
+    padding: 8px;
+    transition: all 0.2s ease;
+    border-radius: 10px; 
+    border: 3px solid white;
+}
+
+.body-content .loja .card-group .card .card-body .group-img-card img.active-img-card {
+    border: 3px solid #D83953;
+}
+
+.body-content .loja .card-group .card .card-body .group-img-card img:hover:not(.active-img-card) {
+    border: 3px solid #D83953;
+    cursor: pointer;
+}
+
+.body-content .loja .card-group .card .card-footer {
+    grid-area: card-footer;
+}
+
+.body-content .loja .card-group .card .card-footer .btn-card-loja {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #D83953;
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.2s;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.body-content .loja .card-group .card .card-footer .btn-card-loja:hover {
+    background-color: #d80b2d;
+}
+
+.body-content .loja .card-group .card .card-footer .btn-card-loja i {
+    margin-right: 10px;
+    font-size: 14px;
 }

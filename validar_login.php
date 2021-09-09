@@ -14,19 +14,19 @@
     $senarray = $array['tb02_senha'];
 
     if($senha == $senarray && $usuario == $usuarray){
-            echo"
+            echo("
                 <script language='javascript' type='text/javascript'>
                     window.location.href='index.php';
                 </script>
-            ";
+            ");
             $_SESSION['cod'] = $codarray;
-            $_SESSION['nome'] = $usuarray;
     } else {
-        echo"
+        echo("
             <script language='javascript' type='text/javascript'>
                 alert('Usuário ou senha incorretos.');
                 window.location.href = 'login.html';
-            </script>";
+            </script>
+        ");
         die();
     }
 ?>

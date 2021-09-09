@@ -111,9 +111,6 @@ $(document).ready(function () {
             limpar();
             cont++;
             $("#imgblur" + cont + ", #content" + cont).addClass("active");
-            $(".container").css({
-                "background-image": "url(assets/carousel/carousel" + cont + ".jpg)"
-            });
             $("#img" + cont).addClass("active");
         }
     });
@@ -125,9 +122,6 @@ $(document).ready(function () {
             limpar();
             cont--;
             $("#imgblur" + cont + ", #content" + cont).addClass("active");
-            $(".container").css({
-                "background-image": "url(assets/carousel/carousel" + cont + ".jpg)"
-            });
             $("#img" + cont).addClass("active");
             $("#img" + (cont + 1)).removeClass("active");
         }
@@ -231,9 +225,6 @@ function imgfunc(par) {
     }
     limpar();
     $("#imgblur" + cont + ", #content" + cont).addClass("active");
-    $(".container").css({
-        "background-image": "url(assets/carousel/carousel" + cont + ".jpg)"
-    });
     for (var cont2 = cont; cont2 >= 2; cont2--) {
         $("#img" + cont2).addClass("active");
     }

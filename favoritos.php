@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <html lang="pt-br">
 
 <head>
@@ -27,11 +31,11 @@
                 <a href="#"><i class="material-icons">store</i><span class="tooltip">Loja</span></a>
             </li>
             <li>
-                <a href="carrinho.html"><i class="material-icons">shopping_cart</i><span
+                <a href="carrinho.php"><i class="material-icons">shopping_cart</i><span
                         class="tooltip">Carrinho</span></a>
             </li>
             <li>
-                <a href="favoritos.html" class="active"><i class="material-icons">favorite</i><span
+                <a href="favoritos.php" class="active"><i class="material-icons">favorite</i><span
                         class="tooltip">Favoritos</span></a>
             </li>
             <label class="bottom">
@@ -39,7 +43,7 @@
                     <a href="#"><i class="material-icons">account_circle</i><span class="tooltip">Perfil</span></a>
                 </li>
                 <li>
-                    <a href="login.html"><i class="material-icons">login</i><span class="tooltip">Entrar</span></a>
+                    <a href="sair.php"><i class="material-icons">logout</i><span class="tooltip">Sair</span></a>
                 </li>
             </label>
         </ul>

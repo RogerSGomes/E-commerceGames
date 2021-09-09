@@ -10,9 +10,9 @@ body {
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-columns: 5vw 95vw;
+    grid-template-columns: 5vw auto auto;
     grid-template-rows: 100vh;
-    grid-template-areas: "navlat content";
+    grid-template-areas: "navlat content vazio";
 }
 
 /* navbar lateral */
@@ -27,6 +27,7 @@ body {
     grid-area: content;
     padding: 0;
     margin: 0;
+    width: 95vw;
     display: grid;
     grid-template-columns: 70% 30%;
     grid-template-rows: 100vh;
@@ -38,6 +39,54 @@ body {
     margin: 0;
     padding: 50px;
     overflow: auto;
+}
+
+.content .itens-list .vazio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    width: 100%;
+    height: 60vh;
+    flex-direction: column;
+}
+
+.content .itens-list .vazio img {
+    margin-bottom: 10px;
+}
+.content .itens-list .vazio p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+}
+
+.content .itens-list .vazio .btn-vazio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 40px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 1px;
+    background: #D83953;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.content .itens-list .vazio .btn-vazio:hover {
+    background-color: #d80b2d;
+    box-shadow: 3px 3px 50px #d80b2d;
+}
+
+.content .itens-list .vazio .btn-vazio i {
+    font-size: 16px;
 }
 
 .content .itens-list .title {
@@ -167,19 +216,19 @@ body {
 
 .content .nota-fiscal {
     grid-area: nota;
-    position: relative;
     background: #f9f9f9;
     margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
     box-shadow: -10px 0px 20px #dddddd;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 150px auto 50px;
+    grid-template-areas: "nota-card"
+                         "nota-body"
+                         "nota-footer";
 }
 
 .content .nota-fiscal .nota-card {
-    width: 100%;
-    height: 150px;
+    grid-area: nota-card;
     background: #1b1b1b;
     display: grid;
     grid-template-columns: 30% 70%;
@@ -190,7 +239,6 @@ body {
 
 .content .nota-fiscal .nota-card .card-img {
     grid-area: img;
-    background-image: url('assets/carousel/carousel2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -257,16 +305,40 @@ body {
 }
 
 .content .nota-fiscal .nota-body {
+    grid-area: nota-body;
     overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 50px 0;
+}
+
+.content .nota-fiscal .nota-body .nota-vazia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     width: 100%;
-    padding: 50px 0 100px 0;
+    height: 100%;
+    padding-top: 50px;
+}
+
+.content .nota-fiscal .nota-body .nota-vazia img {
+    margin-bottom: 10px;
+}
+
+.content .nota-fiscal .nota-body .nota-vazia p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
 }
 
 .content .nota-fiscal .nota-body .nota-header {
     border-bottom: 1px solid #999;
     padding-bottom: 15px;
     width: 80%;
-    margin-left: 10%;
 }
 
 .content .nota-fiscal .nota-body .nota-header .title {
@@ -302,7 +374,6 @@ body {
     flex-direction: column;
     padding: 15px 0;
     width: 80%;
-    margin-left: 10%;
 }
 
 .content .nota-fiscal .nota-body .nota-cell:not(:last-child) {
@@ -340,10 +411,7 @@ body {
 }
 
 .content .nota-fiscal .nota-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
+    grid-area: nota-footer;
 }
 
 .content .nota-fiscal .nota-footer .btn-card {
