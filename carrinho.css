@@ -241,6 +241,7 @@ body {
     grid-area: img;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 .content .nota-fiscal .nota-card .card-body {
