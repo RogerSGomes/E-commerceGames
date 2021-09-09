@@ -93,14 +93,23 @@
                                     });
                                     $('#card-title').text('$resultado[tb01_nome]');
                                     $('#card-description').text('$resultado[tb05_nome]');
-                                    $('#card-preco').text('R$ $resultado[tb01_preco]');
-
+                                    
+                        ");
+                        if ($resultado['tb01_preco'] == '0.00'){
+                            echo("
+                                $('#card-preco').text('Grátis');
+                            ");
+                        } else {
+                            echo("
+                                $('#card-preco').text('R$ $resultado[tb01_preco]');
+                            ");
+                        }
+                        echo("
                                     $('.card').removeClass('active');
                                     $('#card$resultado[tb03_cod_carrinho]').addClass('active');
                                 });
                             </script>
                         ");
-                        
                     }
 
                     if($cont == 0) {
@@ -139,7 +148,17 @@
                                 <div class='card-body'>
                                     <label class='title' id='card-title'>$resultado[tb01_nome]</label>
                                     <label class='description' id='card-description'>$resultado[tb05_nome]</label>
+                            ");
+                            if ($resultado['tb01_preco'] == '0.00'){
+                                echo("
+                                    <label class='preco' id='card-preco'>Grátis</label>
+                                ");
+                            } else {
+                                echo("
                                     <label class='preco' id='card-preco'>RS $resultado[tb01_preco]</label>
+                                ");
+                            }
+                            echo(" 
                                 </div>
                                 <div class='card-footer'>
                                     <button class='btn-card'><i class='material-icons' style='margin-right: 10px;'>delete</i>Cancelar
