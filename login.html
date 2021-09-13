@@ -7,8 +7,8 @@
 
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="navbar-lateral.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/navbar-lateral.css">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
                 <a href="index.php"><i class="material-icons">home</i><span class="tooltip">Início</span></a>
             </li>
             <li>
-                <a href="#"><i class="material-icons">store</i><span class="tooltip">Loja</span></a>
+                <a href="index.php#loja"><i class="material-icons">store</i><span class="tooltip">Loja</span></a>
             </li>
             <label class="bottom">
                 <li>
@@ -40,7 +40,7 @@
     <div class="container">
         <div class="forms-container">
             <div class="signin-signup">
-                <form action="validar_login.php" method="POST" class="sign-in-form">
+                <form action="php/validar_login.php" method="POST" class="sign-in-form">
                     <h2 class="title">Entrar</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
@@ -68,7 +68,7 @@
                     </div>
                 </form>
 
-                <form action="validar_cadastro.php" method="POST" class="sign-up-form">
+                <form action="php/validar_cadastro.php" method="POST" class="sign-up-form">
                     <h2 class="title">Cadastrar</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
@@ -126,7 +126,7 @@
         </div>
     </div>
 
-    <script src="login.js"></script>
+    <script src="js/login.js"></script>
 </body>
 
 </html>

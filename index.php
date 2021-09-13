@@ -8,8 +8,8 @@
     <meta charset="utf-8">
     <title>E-commerce Games</title>
 
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="navbar-lateral.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/navbar-lateral.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -25,11 +25,11 @@
                 <a href="#"><i class="material-icons">menu</i></a>
             </li>
             <li>
-                <a href="index.php" class="active"><i class="material-icons">home</i><span
+                <a id="inicionav" href="#inicio"><i class="material-icons">home</i><span
                         class="tooltip">Início</span></a>
             </li>
             <li>
-                <a href="#loja"><i class="material-icons">store</i><span
+                <a id="lojanav" class='lojabutton' href="#loja"><i class="material-icons">store</i><span
                         class="tooltip">Loja</span></a>
             </li>
             <?php
@@ -48,16 +48,9 @@
                             <a href='carrinho.php'><i class='material-icons'>shopping_cart</i><span
                                     class='tooltip'>Carrinho</span></a>
                         </li>
-                        <li>
-                            <a href='favoritos.php'><i class='material-icons'>favorite</i><span
-                                    class='tooltip'>Favoritos</span></a>
-                        </li>
                         <label class='bottom'>
                             <li>
-                                <a href='#'><i class='material-icons'>account_circle</i><span class='tooltip'>Perfil</span></a>
-                            </li>
-                            <li>
-                                <a href='sair.php'><i class='material-icons'>logout</i><span class='tooltip'>Sair</span></a>
+                                <a href='php/sair.php'><i class='material-icons'>logout</i><span class='tooltip'>Sair</span></a>
                             </li>
                         </label>
                     ");
@@ -69,7 +62,7 @@
     <!-- conteúdo -->
 
     <div class="body-content">
-        <div class="jumbotron">
+        <div class="jumbotron" id="inicio">
             <div class="blur"></div>
 
             <!-- php - imagens borradas -->
@@ -146,7 +139,7 @@
                             if($cont == 12) {
                                 echo("
                                         <div class='container-button'>
-                                            <button class='button' type='button'>Comprar Agora</button>
+                                            <button class='lojabutton button' type='button'>Comprar Agora</button>
                                         </div>
                                     </div>
                                 ");  
@@ -269,12 +262,14 @@
                         foreach($exComando as $resultado1) {
                             $codprod = $resultado1['tb01_cod_produto'];
                             echo("
-                                <div class='card'>
-                                    <div class='card-header'>
-                                        <img src='data:image/jpg;base64,".  base64_encode($resultado1['tb01_img'])  ."' width='300px' height='100%'>
-                                    </div>
-                                    <div class='card-body'>
-                                        <p class='title'>$resultado1[tb01_nome]</p>
+                                <form method='POST' action='php/adicionar_carrinho.php'>
+                                    <div class='card'>
+                                        <input type='text' name='cod' value='$resultado1[tb01_cod_produto]' style='display: none;'>
+                                        <div class='card-header'>
+                                            <img src='data:image/jpg;base64,".  base64_encode($resultado1['tb01_img'])  ."' width='300px' height='100%'>
+                                        </div>
+                                        <div class='card-body'>
+                                            <p class='title'>$resultado1[tb01_nome]</p>
                                                     
                             ");
                             if ($resultado1['tb01_preco'] == '0.00'){
@@ -288,30 +283,44 @@
                             }
                             echo("
                                 <p class='plataforma'>Selecione uma plataforma</p>
-                                <div class='group-img-card'>            
+                                <div class='group-img-card'> 
+                                
+                                <input class='plataforma plataforma$codprod' name='plataforma' type='text' value='' style='display:none' required>
                             ");
-                            try {
-                                $conecta = new PDO("mysql:host=localhost;dbname=bd_ecommerce_games", "root" , "");
-                                $consultaSQL = "SELECT * FROM tb05_plataforma, tb06_relaciona_plataforma WHERE tb06_cod_plataforma = tb05_cod_plataforma AND tb06_cod_produto = $codprod";
-                                $exComando = $conecta->prepare($consultaSQL);
-                                $conecta->exec("set names utf8");
-                                $exComando->execute(array());
-    
-                                foreach($exComando as $resultado2) {
-                                    echo("
-                                        <img src='data:image/jpg;base64,".  base64_encode($resultado2['tb05_icone'])  ."' width='25px' height='25px'>            
-                                    ");
-                                }	
-                            } catch(PDOException $erro) {
-                                echo("Errrooooo! foi esse: " . $erro->getMessage());
-                            }
+                                try {
+                                    $conecta = new PDO("mysql:host=localhost;dbname=bd_ecommerce_games", "root" , "");
+                                    $consultaSQL = "SELECT * FROM tb05_plataforma, tb06_relaciona_plataforma WHERE tb06_cod_plataforma = tb05_cod_plataforma AND tb06_cod_produto = $codprod";
+                                    $exComando = $conecta->prepare($consultaSQL);
+                                    $conecta->exec("set names utf8");
+                                    $exComando->execute(array());
+        
+                                    foreach($exComando as $resultado2) {
+                                        echo("
+                                            <img id='plataforma-$codprod-$resultado2[tb05_cod_plataforma]' src='data:image/jpg;base64,".  base64_encode($resultado2['tb05_icone'])  ."' width='25px' height='25px'>            
+                                        
+                                            
+                                            <script language='javascript' type='text/javascript'>
+                                                $('#plataforma-$codprod-$resultado2[tb05_cod_plataforma]').click(function() {
+                                                    $('.active-img-card').removeClass('active-img-card');
+                                                    $('#plataforma-$codprod-$resultado2[tb05_cod_plataforma]').addClass('active-img-card');
+
+                                                    $('.plataforma').val('');
+                                                    $('.plataforma$codprod').val('$resultado2[tb05_cod_plataforma]');
+                                                });
+                                            </script>
+                                        ");
+                                    }	
+                                } catch(PDOException $erro) {
+                                    echo("Errrooooo! foi esse: " . $erro->getMessage());
+                                }
                             echo("
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class='card-footer'>
-                                        <button class='btn-card-loja'><i class='material-icons'>shopping_cart</i> Adicionar ao carrinho</button>
-                                    </div>
-                                </div>      
+                                        <div class='card-footer'>
+                                            <button type='submit' class='btn-card-loja'><i class='material-icons'>shopping_cart</i> Adicionar ao carrinho</button>
+                                        </div>
+                                    </div>    
+                                </form>  
                             ");
                         }	
                     } catch(PDOException $erro) {
@@ -323,7 +332,7 @@
     </div>
 </body>
 
-<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 
 <?php
     try {

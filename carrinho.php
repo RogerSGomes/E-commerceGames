@@ -11,8 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="carrinho.css">
-    <link rel="stylesheet" href="navbar-lateral.css">
+    <link rel="stylesheet" href="css/carrinho.css">
+    <link rel="stylesheet" href="css/navbar-lateral.css">
 </head>
 
 <body class="main">
@@ -28,22 +28,15 @@
                 <a href="index.php"><i class="material-icons">home</i><span class="tooltip">Início</span></a>
             </li>
             <li>
-                <a href="#"><i class="material-icons">store</i><span class="tooltip">Loja</span></a>
+                <a href="index.php#loja"><i class="material-icons">store</i><span class="tooltip">Loja</span></a>
             </li>
             <li>
                 <a href="carrinho.php" class="active"><i class="material-icons">shopping_cart</i><span
                         class="tooltip">Carrinho</span></a>
             </li>
-            <li>
-                <a href="favoritos.php"><i class="material-icons">favorite</i><span
-                        class="tooltip">Favoritos</span></a>
-            </li>
             <label class="bottom">
                 <li>
-                    <a href="#"><i class="material-icons">account_circle</i><span class="tooltip">Perfil</span></a>
-                </li>
-                <li>
-                    <a href="sair.php"><i class="material-icons">logout</i><span class="tooltip">Sair</span></a>
+                    <a href="php/sair.php"><i class="material-icons">logout</i><span class="tooltip">Sair</span></a>
                 </li>
             </label>
         </ul>
@@ -57,7 +50,7 @@
             <?php
                 try {
                     $conecta = new PDO("mysql:host=localhost;dbname=bd_ecommerce_games", "root" , "");
-                    $consultaSQL = "SELECT * FROM tb01_produto, tb03_carrinho, tb05_plataforma WHERE tb01_cod_produto = tb03_cod_produto AND tb03_cod_plataforma = tb05_cod_plataforma AND tb03_cod_usuario = $_SESSION[cod];";
+                    $consultaSQL = "SELECT * FROM tb01_produto, tb03_carrinho, tb05_plataforma WHERE tb01_cod_produto = tb03_cod_produto AND tb03_cod_plataforma = tb05_cod_plataforma AND tb03_cod_usuario = $_SESSION[cod] ORDER BY tb03_cod_carrinho DESC;";
                     $exComando = $conecta->prepare($consultaSQL);
                     $conecta->exec("set names utf8");
                     $exComando->execute(array());
@@ -93,7 +86,7 @@
                                     });
                                     $('#card-title').text('$resultado[tb01_nome]');
                                     $('#card-description').text('$resultado[tb05_nome]');
-                                    
+                                    $('.input').val('$resultado[tb03_cod_carrinho]');
                         ");
                         if ($resultado['tb01_preco'] == '0.00'){
                             echo("
@@ -118,7 +111,7 @@
                                 <img src='assets/carrinho/empty.png' width='256px' height='256px'>
                                 <p class='title'>Seu carrinho está vazio</p>
                 
-                                <button type='button' class='btn-vazio' onclick='window.location.href='index.php';'><i class='material-icons' style='margin-right: 10px;'>shopping_cart</i> Voltar a loja</button>
+                                <button type='button' class='btn-vazio' onclick='Inicio()'><i class='material-icons' style='margin-right: 10px;'>shopping_cart</i> Voltar a loja</button>
                             </div>
                         ");
                     }
@@ -127,18 +120,19 @@
                 }
             ?>
         </div>
-        <div class="nota-fiscal">
-            <div class="nota-card">
-                <?php
-                    try {
-                        $conecta = new PDO("mysql:host=localhost;dbname=bd_ecommerce_games", "root" , "");
-                        $consultaSQL = "SELECT * FROM tb01_produto, tb03_carrinho, tb05_plataforma WHERE tb01_cod_produto = tb03_cod_produto AND tb03_cod_plataforma = tb05_cod_plataforma AND tb03_cod_usuario = $_SESSION[cod] LIMIT 1;";
-                        $exComando = $conecta->prepare($consultaSQL);
-                        $conecta->exec("set names utf8");
-                        $exComando->execute(array());
+        
+        <div class='nota-fiscal'>
+            <?php
+                try {
+                    $conecta = new PDO("mysql:host=localhost;dbname=bd_ecommerce_games", "root" , "");
+                    $consultaSQL = "SELECT * FROM tb01_produto, tb03_carrinho, tb05_plataforma WHERE tb01_cod_produto = tb03_cod_produto AND tb03_cod_plataforma = tb05_cod_plataforma AND tb03_cod_usuario = $_SESSION[cod] ORDER BY tb03_cod_carrinho DESC LIMIT 1;";
+                    $exComando = $conecta->prepare($consultaSQL);
+                    $conecta->exec("set names utf8");
+                    $exComando->execute(array());
 
-                        foreach($exComando as $resultado) {
-                            echo("
+                    foreach($exComando as $resultado) {
+                        echo("
+                            <div class='nota-card'>
                                 <style>
                                     .content .nota-fiscal .nota-card .card-img {
                                         background-image: url(data:image/jpg;base64,".  base64_encode($resultado['tb01_img'])  .");
@@ -161,20 +155,23 @@
                             echo(" 
                                 </div>
                                 <div class='card-footer'>
+                                <form method='POST' action='php/cancelar_item.php'>
+                                    <input class='input' name='cod' type='text' value='$resultado[tb03_cod_carrinho]' style='display: none;'>
                                     <button class='btn-card'><i class='material-icons' style='margin-right: 10px;'>delete</i>Cancelar
-                                        item</button>
-                                </div>
-                            ");
-                        }	
-                    } catch(PDOException $erro) {
-                        echo("Errrooooo! foi esse: " . $erro->getMessage());
-                    }
+                                            item</button>
+                                    </form>    
+                                </div>   
+                            </div>  
+                        ");
+                    }	
+                } catch(PDOException $erro) {
+                    echo("Errrooooo! foi esse: " . $erro->getMessage());
+                }
                 ?>
-            </div>
             <?php
                 try {
                     $conecta = new PDO("mysql:host=localhost;dbname=bd_ecommerce_games", "root" , "");
-                    $consultaSQL = "SELECT * FROM tb01_produto, tb03_carrinho WHERE tb01_cod_produto = tb03_cod_produto AND tb03_cod_usuario = $_SESSION[cod] LIMIT 1;";
+                    $consultaSQL = "SELECT * FROM tb01_produto, tb03_carrinho WHERE tb01_cod_produto = tb03_cod_produto AND tb03_cod_usuario = $_SESSION[cod] ORDER BY tb03_cod_carrinho DESC LIMIT 1;";
                     $exComando = $conecta->prepare($consultaSQL);
                     $conecta->exec("set names utf8");
                     $exComando->execute(array());
@@ -218,7 +215,7 @@
                 }
                 try {
                     $conecta = new PDO("mysql:host=localhost;dbname=bd_ecommerce_games", "root" , "");
-                    $consultaSQL = "SELECT * FROM tb01_produto, tb03_carrinho WHERE tb01_cod_produto = tb03_cod_produto AND tb03_cod_usuario = $_SESSION[cod];";
+                    $consultaSQL = "SELECT * FROM tb01_produto, tb03_carrinho WHERE tb01_cod_produto = tb03_cod_produto AND tb03_cod_usuario = $_SESSION[cod] ORDER BY tb03_cod_carrinho DESC;";
                     $exComando = $conecta->prepare($consultaSQL);
                     $conecta->exec("set names utf8");
                     $exComando->execute(array());
@@ -240,7 +237,7 @@
                 }
                 try {
                     $conecta = new PDO("mysql:host=localhost;dbname=bd_ecommerce_games", "root" , "");
-                    $consultaSQL = "SELECT * FROM tb01_produto, tb03_carrinho WHERE tb01_cod_produto = tb03_cod_produto AND tb03_cod_usuario = $_SESSION[cod] LIMIT 1;";
+                    $consultaSQL = "SELECT * FROM tb01_produto, tb03_carrinho WHERE tb01_cod_produto = tb03_cod_produto AND tb03_cod_usuario = $_SESSION[cod] ORDER BY tb03_cod_carrinho DESC LIMIT 1;";
                     $exComando = $conecta->prepare($consultaSQL);
                     $conecta->exec("set names utf8");
                     $exComando->execute(array());
@@ -272,8 +269,13 @@
             ?>
         </div>
     </div>
+   
 </body>
 
-</body>
+<script>
+    function Inicio(){
+        window.location.href = "index.php#loja";
+    }
+</script>
 
 </html>
