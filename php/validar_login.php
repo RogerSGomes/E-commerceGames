@@ -16,7 +16,7 @@
     if($senha == $senarray && $usuario == $usuarray){
             echo("
                 <script language='javascript' type='text/javascript'>
-                    window.location.href='index.php';
+                    window.location.href='../index.php';
                 </script>
             ");
             $_SESSION['cod'] = $codarray;
@@ -24,7 +24,7 @@
         echo("
             <script language='javascript' type='text/javascript'>
                 alert('Usuário ou senha incorretos.');
-                window.location.href = 'login.html';
+                window.location.href = '../login.html';
             </script>
         ");
         die();

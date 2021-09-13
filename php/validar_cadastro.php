@@ -17,6 +17,7 @@
         echo("
             <script language='javascript' type='text/javascript'>
                 alert('Não foi possível realizar o cadastro. Usuário já existente.');
+                window.location.href = '../login.html';
             </script>
         ");
         die();
@@ -27,14 +28,14 @@
             echo("
                 <script language='javascript' type='text/javascript'>
                     alert('Cadastro realizado com sucesso. Entre para continuar.');
-                    window.location.href = 'login.html';
+                    window.location.href = '../login.html';
                 </script>
             ");
         } else {
             echo("
                 <script language='javascript' type='text/javascript'>
                     alert('Ocorreu algum erro durante o cadastro do usuário.');
-                    window.location.href='login.html';
+                    window.location.href='../login.html';
                 </script>
             ");
         }

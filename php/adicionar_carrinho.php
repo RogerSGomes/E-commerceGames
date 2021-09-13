@@ -18,7 +18,7 @@
             echo("
                 <script language='javascript' type='text/javascript'>
                     alert('Este produto já está em seu carrinho.');
-                    window.location.href = 'index.php#loja';
+                    window.location.href = '../index.php#loja';
                 </script>
             ");
             die();
@@ -29,14 +29,14 @@
                 echo("
                     <script language='javascript' type='text/javascript'>
                         alert('Produto adicionado ao seu carrinho.');
-                        window.location.href = 'carrinho.php';
+                        window.location.href = '../carrinho.php';
                     </script>
                 ");
             } else {
                 echo("
                     <script language='javascript' type='text/javascript'>
                         alert('Ocorreu algum erro durante a adição do produto ao seu carrinho.');
-                        window.location.href='index.php#loja';
+                        window.location.href='../index.php#loja';
                     </script>
                 ");
             }
@@ -45,7 +45,7 @@
         echo("
             <script language='javascript' type='text/javascript'>
                 alert('Logue em sua conta para continuar');
-                window.location.href='login.html';
+                window.location.href='../login.html';
             </script>
         ");
     }

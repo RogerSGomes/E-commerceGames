@@ -275,9 +275,9 @@ body {
 }
 
 .body-content .loja {
-    height: 1000px;
     color: white;
     padding: 50px;
+    width: 100%;
 }
 
 .body-content .loja p.title {

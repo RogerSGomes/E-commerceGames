@@ -8,14 +8,14 @@
         echo("
             <script language='javascript' type='text/javascript'>
                 alert('Item removido de seu carrinho com sucesso.');
-                window.location.href = 'carrinho.php';
+                window.location.href = '../carrinho.php';
             </script>
         ");
     } else {
         echo("
             <script language='javascript' type='text/javascript'>
                 alert('Ocorreu algum erro durante a remoção do produto de seu carrinho.');
-                window.location.href='carrinho.php';
+                window.location.href='../carrinho.php';
             </script>
         ");
     }
