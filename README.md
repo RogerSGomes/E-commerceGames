@@ -25,7 +25,7 @@
   
   <h3 id='instalacao'>Rodando a Aplicação</h3>
   
-  <p>Depois de configurar o Banco de dados em sua máquina, mova a pasta raiz do projeto para a pasta 'htdocs' do Xampp, localizada por padrão em 'C:\xampp\htdocs\' e, em seguida, abra seu navegador e entre no link 'localhost/E-commerceGames-master'</p>
+  <p>Depois de configurar o Banco de dados em sua máquina, mova a pasta raiz do projeto para a pasta 'htdocs' do Xampp, localizada por padrão em 'C:\xampp\htdocs\' e, em seguida, abra o link 'localhost/E-commerceGames-master'em seu navegador.</p>
   <p>Pronto! O projeto já estará rodando no localhost de seu dispositivo, agora é só aproveitar e vizualizar todos os recursos presentes nele.</p>
   
   <h3 id='nota' style='color: red;'>Notas</h3>
