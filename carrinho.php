@@ -136,6 +136,9 @@
                                 <style>
                                     .content .nota-fiscal .nota-card .card-img {
                                         background-image: url(data:image/jpg;base64,".  base64_encode($resultado['tb01_img'])  .");
+                                        background-repeat: no-repeat;
+                                        background-size: cover;
+                                        background-position: center;
                                     }
                                 </style>
                                 <div class='card-img' id='card-img'></div>
