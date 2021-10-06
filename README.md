@@ -4,14 +4,14 @@
   
   # Considerações importantes antes de rodar a aplicação
   
-  Tenha certeza de que seu dispositivo tem o xampp instalado, senão instale-o no link: https://www.apachefriends.org/pt_br/download.html. Após a instalação do xampp abra a pasta que contém o banco de dados e siga os seguintes passos:
-  Abra o XAMPP Control Panel em seu dispositivo;
-  Inicie o Apache e o MySQL;
-  Em seu navegador, entre no link localhost/phpmyadmin;
-  Crie um novo banco de dados chamado 'bd_ecommerce_games';
-  Na parte superior da página, clique em 'Importar';
-  Clique no botão 'Procurar...' e selecione o banco de dados localizado na Pasta './BD' do arquivo baixado;
-  Desça a página e clique no botão 'Executar';
+  Tenha certeza de que seu dispositivo tem o xampp instalado, senão instale-o no link: https://www.apachefriends.org/pt_br/download.html. Após a instalação do xampp, siga os seguintes passos:
+  _Abra o XAMPP Control Panel em seu dispositivo;
+  _Inicie o Apache e o MySQL;
+  _Em seu navegador, entre no link localhost/phpmyadmin;
+  _Crie um novo banco de dados chamado 'bd_ecommerce_games';
+  _Na parte superior da página, clique em 'Importar';
+  _Clique no botão 'Procurar...' e selecione o banco de dados localizado na Pasta './BD' do arquivo baixado;
+  _Desça a página e clique no botão 'Executar'.
   
   # Rodando a aplicação
   
