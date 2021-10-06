@@ -5,8 +5,8 @@
     <ul>
       <li><a href="#sobre">Sobre</li>
       <li><a href="#requisitos">Pré-requisitos</li>
-      <li><a href="#instalacao">Sobre</li>
-      <li><a href="#nota">Sobre</li>
+      <li><a href="#instalacao">Rodando a aplicação</li>
+      <li><a href="#nota">Nota</li>
     </ul>
     
   <h3 id='sobre'>Sobre</h3>
@@ -24,10 +24,10 @@
     <li>Desça a página e clique no botão 'Executar'.</li>
   </ul>
   
-  # Rodando a aplicação
+  <h3 id='instalacao'>Rodando a Aplicação</h3>
   
-  Depois de configurar o Banco de dados em sua máquina, mova a pasta raiz do projeto para a pasta do Xampp, por padrão localizada em 'C:\xampp\htdocs' e, em seguida, abra seu navegador e entre no link 'localhost/E-commerceGames-master'  
-  Pronto! O projeto já estará rodando no localhost de seu dispositivo, agora é só aproveitar e vizualizar todos os recursos presentes nele.
+  <p>Depois de configurar o Banco de dados em sua máquina, mova a pasta raiz do projeto para a pasta do Xampp, por padrão localizada em 'C:\xampp\htdocs' e, em seguida, abra seu navegador e entre no link 'localhost/E-commerceGames-master'</p>
+  <p>Pronto! O projeto já estará rodando no localhost de seu dispositivo, agora é só aproveitar e vizualizar todos os recursos presentes nele.</p>
   
-  # Nota
-  Projeto feito exclusivamente para estudos, ou seja, sem visar nenhuma forma de lucro com o mesmo.
+  <h3 id='nota' style='color: red;'>Nota</h3>
+  <p>Projeto feito exclusivamente para estudos, ou seja, sem visar nenhuma forma de lucro com o mesmo.</p>
