@@ -32,10 +32,13 @@
   <p>Tudo pronto! O projeto já estará rodando no localhost de seu dispositivo, agora é só aproveitar e vizualizar todos os recursos presentes nele.</p>
   
   <h2 id='galeria'>🖼 Galeria</h2>
-  <p>Página inicial</p>
+  <p>Página inicial - Deslogado</p>
   <img src="./github/galeria1.jpg" alt="galeria1" />
   <img src="./github/galeria2.jpg" alt="galeria2" />
   <img src="./github/galeria3.jpg" alt="galeria3" />
+  
+  <p>Página inicial - Logado</p>
+  <img src="./github/galeria8.jpg" alt="galeria8" />
   
   <p>Loja de jogos</p>
   
@@ -45,6 +48,10 @@
   <p>Login e Cadastro</p>
   <img src="./github/galeria6.jpg" alt="galeria6" />
   <img src="./github/galeria7.jpg" alt="galeria7" />
+  
+  <p>Carrinho</p>
+  <img src="./github/galeria9.jpg" alt="galeria9" />
+  <img src="./github/galeria10.jpg" alt="galeria10" />
   
   <h2 id='nota'>📃 Notas</h2>
   <p>Projeto feito somente para Computadores, portanto não foi adicionado o recurso "Responsivo" para estilização de redimencionamento do conteúdo, porém, em uma data posterior adicionarei este recurso.</p>
