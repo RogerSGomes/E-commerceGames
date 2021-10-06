@@ -12,7 +12,7 @@
   <p>Este website foi feito com o intuito de colocar em prática os conhecimentos adquiridos por mim ao longo de meus estudos na área da programação. O projeto consiste em um E-commerce para venda de jogos, utilizando os recursos de Login e Cadastro de usuários, Sessions (PHP), MySQL, JavaScript, HTML, CSS.</p>
   
   <h3 id='requisitos'>Pré-requisitos para rodar a aplicação</h3>
-  <p>Tenha certeza de que seu dispositivo tem o xampp instalado, senão instale-o no 'link:https://www.apachefriends.org/pt_br/download.html'. Após a instalação do xampp, siga os seguintes passos:</p>
+  <p>Tenha certeza de que seu dispositivo tem o xampp instalado, senão instale-o no link: 'https://www.apachefriends.org/pt_br/download.html'. Após a instalação do xampp, siga os seguintes passos:</p>
   <ul>
     <li>Abra o XAMPP Control Panel em seu dispositivo;</li>
     <li>Inicie o Apache e o MySQL;</li>
