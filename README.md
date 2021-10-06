@@ -32,12 +32,12 @@
   <p>Tudo pronto! O projeto já estará rodando no localhost de seu dispositivo, agora é só aproveitar e vizualizar todos os recursos presentes nele.</p>
   
   <h2 id='galeria'>🖼 Galeria</h2>
-  <p>Home</p>
+  <p>Página inicial</p>
   <img src="./github/galeria1.jpg" alt="galeria1" />
   <img src="./github/galeria2.jpg" alt="galeria2" />
   <img src="./github/galeria3.jpg" alt="galeria3" />
   
-  <p>Loja</p>
+  <p>Loja de jogos</p>
   
   <img src="./github/galeria4.jpg" alt="galeria4" />
   <img src="./github/galeria5.jpg" alt="galeria5" />
