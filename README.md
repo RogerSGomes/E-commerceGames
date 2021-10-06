@@ -19,7 +19,7 @@
     <li>Em seu navegador, entre no link 'localhost/phpmyadmin';</li>
     <li>Crie um novo banco de dados chamado 'bd_ecommerce_games';</li>
     <li>Na parte superior da página, clique em 'Importar';</li>
-    <li>Clique no botão 'Procurar...' e selecione o banco de dados localizado na Pasta 'bd\bd_ecommerce_games.sql' do arquivo baixado;</li>
+    <li>Clique no botão 'Procurar...' e selecione o banco de dados localizado na Pasta '.\bd\bd_ecommerce_games.sql' do arquivo baixado;</li>
     <li>Desça a página e clique no botão 'Executar'.</li>
   </ul>
   
