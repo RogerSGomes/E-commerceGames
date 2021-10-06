@@ -1,9 +1,15 @@
 <h1>E-commerceGames</h1>
 
   <h4>Sumário</h4>
-    * [Sobre](#Sobre)
+    <!--TS-->
+    <ul>
+      <li><a href="#sobre">Sobre</li>
+      <li><a href="#requisitos">Sobre</li>
+      <li><a href="#instalacao">Sobre</li>
+      <li><a href="#nota">Sobre</li>
+    </ul>
     
-  #Sobre
+  <h3>Sobre</h3>
   Este website foi feito com o intuito de colocar em prática os conhecimentos adquiridos por mim ao longo de meus estudos na área da programação. O projeto consiste em um E-commerce para venda de jogos, utilizando os recursos de Login e Cadastro de usuários, Sessions (PHP), MySQL, JavaScript, HTML, CSS.
   
   # Considerações importantes antes de rodar a aplicação
