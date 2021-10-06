@@ -55,7 +55,7 @@
   
   <h2 id='nota'>📃 Notas</h2>
   <p>Projeto feito somente para computadores, portanto não foi adicionado o recurso "Responsivo" para estilização de redimencionamento do conteúdo, porém, em uma data posterior adicionarei este recurso.</p>
-  <p>Projeto feito exclusivamente para estudos, ou seja, sem visar nenhuma forma de lucro com o mesmo.</p>
+  <p>Projeto feito exclusivamente para estudos, ou seja, sem visar nenhuma forma de lucro.</p>
   <p>Projeto realizado com a ajuda de Robert da Silva Gomes (GitHub: <a href="https://github.com/RobertSGomes/">RobertSGomes</a>).</p>
   <p>Este projeto tem uma versão traduzida para a biblioteca React. (<a href="https://github.com/RogerSGomes/E-commerceGames-React">E-commerceGames-React</a>)</p>
 
