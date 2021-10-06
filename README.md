@@ -1,8 +1,13 @@
 # E-commerceGames
-Trascrição do meu projeto (E-commerceGames), feito em PHP, para React.
 
-  Este projeto foi criado com o intuíto de melhorar meus conhecimentos na biblioteca React. Utilizei um projeto antigo feito em PHP pelo meu irmão (Git: RobertSGomes) e eu, que concistia em um E-commerce para venda de jogos, utilizando os recursos de Login e Cadastro de usuários, Sessions (PHP), MySQL, JavaScript, HTML, CSS.
-  Para rodar a aplicação basta realizar o download, extrair o arquivo com alguma ferramenta de descompactação de arquivos (eu uso o WinRAR), entrar no repositório através de um prompt de comando (eu uso o PowerShell), Exemplo:
+  Este website foi feito com o intuito de colocar em prática os conhecimentos adquiridos por mim ao longo de meus estudos na área da programação. O projeto consiste em um E-commerce para venda de jogos, utilizando os recursos de Login e Cadastro de usuários, Sessions (PHP), MySQL, JavaScript, HTML, CSS.
+  
+  # Como rodar a aplicação?
+  
+  Para rodar a aplicação siga os passos a seguir:
+  
+  @Realize o download do arquivo;
+  realizar o download, extrair o arquivo com alguma ferramenta de descompactação de arquivos (eu uso o WinRAR), movê-lo para a pasta raiz do xampp (se não tiver o xampp instalado, instale-o no link https://www.apachefriends.org/pt_br/download.html) - por padrão esta pasta se localiza no caminho "C:\xampp\htdocs"
 
   cd -path "c:/downloads/E-Commerce-Games-React-main"
   
