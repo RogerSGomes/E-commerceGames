@@ -29,6 +29,6 @@
   <p>Pronto! O projeto já estará rodando no localhost de seu dispositivo, agora é só aproveitar e vizualizar todos os recursos presentes nele.</p>
   
   <h3 id='nota' style='color: red;'>Notas</h3>
-  <p>Projeto feito somente para Computadores, portanto não foi adicionado o recurso Responsivo para estilização de redimencionamento do conteúdo, porém, numa data posterior adicionarei este recurso.</p>
+  <p>Projeto feito somente para Computadores, portanto não foi adicionado o recurso Responsivo para estilização de redimencionamento do conteúdo, porém, em uma data posterior adicionarei este recurso.</p>
   <p>Projeto feito exclusivamente para estudos, ou seja, sem visar nenhuma forma de lucro com o mesmo.</p>
   <p>Projeto realizado com a ajuda de meu irmão (GitHub: RobertSGomes).
