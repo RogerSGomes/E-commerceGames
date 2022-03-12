@@ -10,7 +10,10 @@
     </ul>
     
   <h2 id='sobre'>💬 Sobre</h2>
-  <p>Este website foi feito com o intuito de colocar em prática os conhecimentos adquiridos por mim ao longo de meus estudos na área da programação. O projeto consiste em um E-commerce para venda de jogos, utilizando os recursos de Login e Cadastro de usuários, Sessions (PHP), MySQL, JavaScript, HTML, CSS.</p>
+  <p>O E-commerceGames é um projeto que demorou 2 meses para ser produzido e mais de 1 mês só para ser planejado. Este website consiste em uma loja virtual para venda dos mais novos jogos lançados para as plataformas: PC, XBox, Playstation, Switch e Android.</p>
+  <p>Todo o conteúdo contido no e-commerce é fictício, justamente por ser um projeto de estudo. Resolvi desenvolvê-lo para colocar em prática os conhecimentos que estava adquirindo enquanto estudava mais sobre PHP.</p>
+  <p>Como desenvolvi com a ajuda de meu irmão gêmeo, nós resolvemos dividir as tarefas, ele ficou responsável pela produção do front-end e eu pela produção do banco de dados e do back-end (mesmo que tenhamos nos ajudado muito enquanto desenvolvíamos, seguimos mais ou menos essa divisão de tarefas).</p>
+  <p>Como produto final vê-se um website moderno, com estilo "gamer" contendo várias funcionalidades que tornam o projeto ainda mais prazeroso de desfrutar.</p>
   
   <h2 id='requisitos'>🧩 Pré-requisitos para rodar a aplicação</h2>
   <p>Tenha certeza de que seu dispositivo tem o xampp instalado, senão instale-o no link:</p>
